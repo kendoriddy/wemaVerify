@@ -22,16 +22,12 @@ async function VerifyContent({ searchParams }: { searchParams: SearchParams }) {
   return (
     <>
       <div className="mb-8 space-y-2">
-        <p className="text-sm font-medium uppercase tracking-wide text-primary">
-          Verification
-        </p>
         <h1 className="text-3xl font-semibold tracking-tight text-charcoal">
-          {result ? "Verification result" : "Verify a Payment"}
+          Verify a Wema Payment
         </h1>
         <p className="text-muted-foreground">
-          {result
-            ? "Review the outcome against what your customer claimed."
-            : "Enter the verification code from a Wema transfer confirmation. V1 covers Wema-to-Wema transfers only."}
+          Enter the verification code shown on the customer&apos;s Wema payment
+          notification or receipt.
         </p>
       </div>
 
@@ -39,8 +35,8 @@ async function VerifyContent({ searchParams }: { searchParams: SearchParams }) {
         <div className="space-y-8">
           <ResultPanel result={result} queriedCode={normalized} />
           <div className="rounded-xl border border-border bg-white p-5">
-            <p className="mb-3 text-sm font-medium text-foreground">
-              Check another code
+            <p className="mb-3 text-sm font-medium text-charcoal">
+              Check another payment
             </p>
             <VerifyForm compact />
           </div>

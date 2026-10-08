@@ -21,7 +21,7 @@ export interface Transaction {
   status: TransactionStatus;
   type: TransactionType;
   description: string;
-  /** Optional prototype flag for demo scenarios that need a warning tone */
+  /** Set when a real transaction should not be treated as the expected payment. */
   warningReason?: string;
 }
 

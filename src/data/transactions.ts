@@ -1,8 +1,9 @@
 import type { Transaction } from "@/types";
 
 /**
- * Prototype seed data only.
- * In production this repository would be replaced by authenticated Wema Bank API calls.
+ * Prototype data source.
+ * In production this repository would be replaced by an authenticated Wema
+ * transaction verification API.
  */
 export const transactions: Transaction[] = [
   {
@@ -15,7 +16,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****8830",
     amount: 50000,
     currency: "NGN",
-    date: "8 Oct 2026",
+    date: "8 October 2026",
     time: "2:14 PM",
     status: "successful",
     type: "payment",
@@ -31,7 +32,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****6612",
     amount: 185000,
     currency: "NGN",
-    date: "7 Oct 2026",
+    date: "7 October 2026",
     time: "11:02 AM",
     status: "successful",
     type: "payment",
@@ -47,13 +48,13 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****1190",
     amount: 75000,
     currency: "NGN",
-    date: "8 Oct 2026",
+    date: "8 October 2026",
     time: "9:41 AM",
     status: "successful",
     type: "transfer",
     description: "Transfer to Kemi Logistics Ltd",
     warningReason:
-      "This code is valid, but the receiver does not match Adeola Stores. Confirm the intended recipient before releasing goods.",
+      "This code belongs to a real Wema transaction. Confirm the receiver is the account you expect before releasing goods.",
   },
   {
     id: "txn-004",
@@ -65,7 +66,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****8830",
     amount: 32000,
     currency: "NGN",
-    date: "8 Oct 2026",
+    date: "8 October 2026",
     time: "3:05 PM",
     status: "pending",
     type: "payment",
@@ -83,13 +84,13 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****8830",
     amount: 5000,
     currency: "NGN",
-    date: "6 Oct 2026",
+    date: "6 October 2026",
     time: "4:22 PM",
     status: "successful",
     type: "payment",
     description: "Partial payment attempt",
     warningReason:
-      "This code is valid, but the amount is ₦5,000 — lower than a typical ₦50,000 order. Confirm the expected amount with the customer.",
+      "This code belongs to a real Wema transaction. Confirm the amount is what you are owed before releasing goods.",
   },
   {
     id: "txn-006",
@@ -101,7 +102,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****4410",
     amount: 12500,
     currency: "NGN",
-    date: "5 Oct 2026",
+    date: "5 October 2026",
     time: "1:18 PM",
     status: "failed",
     type: "payment",
@@ -119,7 +120,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****2288",
     amount: 8900,
     currency: "NGN",
-    date: "4 Oct 2026",
+    date: "4 October 2026",
     time: "10:47 AM",
     status: "reversed",
     type: "payment",
@@ -137,7 +138,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****5501",
     amount: 3500,
     currency: "NGN",
-    date: "8 Oct 2026",
+    date: "8 October 2026",
     time: "12:30 PM",
     status: "successful",
     type: "payment",
@@ -153,7 +154,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****9902",
     amount: 1250000,
     currency: "NGN",
-    date: "7 Oct 2026",
+    date: "7 October 2026",
     time: "3:55 PM",
     status: "successful",
     type: "transfer",
@@ -169,7 +170,7 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****7721",
     amount: 27500,
     currency: "NGN",
-    date: "8 Oct 2026",
+    date: "8 October 2026",
     time: "8:15 AM",
     status: "successful",
     type: "payment",
@@ -185,13 +186,13 @@ export const transactions: Transaction[] = [
     receiverAccountMasked: "****3310",
     amount: 45000,
     currency: "NGN",
-    date: "7 Oct 2026",
+    date: "7 October 2026",
     time: "5:09 PM",
     status: "successful",
     type: "payment",
     description: "Payment sent to a different merchant",
     warningReason:
-      "Transaction found, but the receiver is QuickFix Autocare — not the merchant expecting payment. Check details carefully.",
+      "This code belongs to a real Wema transaction paid to QuickFix Autocare. Confirm that is the payment you are expecting.",
   },
 ];
 

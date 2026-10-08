@@ -24,13 +24,12 @@ function findSeedTransaction(normalizedCode: string): Transaction | undefined {
 }
 
 /**
- * verifyTransaction — prototype verification service.
+ * verifyTransaction
  *
- * Flow: UI → verification service → seeded transaction repository.
+ * Flow: UI → verification service → transaction repository.
  *
- * NOTE: The seed layer is for the Hackaholics 7.0 prototype only.
- * Production would replace the repository with an authenticated Wema Bank API
- * (merchant-authenticated lookup by verification code / transaction reference).
+ * This is a prototype data source. In production this would be replaced by an
+ * authenticated Wema transaction verification API.
  */
 export function verifyTransaction(code: string): VerificationResult {
   const normalized = normalizeVerificationCode(code);
@@ -63,7 +62,7 @@ export function verifyTransaction(code: string): VerificationResult {
 
 export function formatAmount(amount: number, currency = "NGN"): string {
   const formatted = new Intl.NumberFormat("en-NG", {
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(amount);
 
@@ -72,4 +71,15 @@ export function formatAmount(amount: number, currency = "NGN"): string {
   }
 
   return `${currency} ${formatted}`;
+}
+
+const statusLabels: Record<string, string> = {
+  successful: "Successful",
+  pending: "Pending",
+  failed: "Failed",
+  reversed: "Reversed",
+};
+
+export function formatStatus(status: string): string {
+  return statusLabels[status] ?? status;
 }

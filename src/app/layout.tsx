@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · Wema Verify",
   },
   description:
-    "Hackathon prototype that helps merchants verify Wema Bank transfers before releasing goods. Seeded demo data only — not a live banking product.",
+    "Confirm Wema payments from the transaction record before releasing goods or services.",
   applicationName: "Wema Verify",
 };
 
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">

@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, Search } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DEMO_CODES } from "@/data/transactions";
@@ -44,7 +44,6 @@ export function VerifyForm({
     setError(null);
     setChecking(true);
 
-    // Short prototype loading state so the merchant feels a real check
     window.setTimeout(() => {
       startTransition(() => {
         const normalized = normalizeVerificationCode(value);
@@ -73,33 +72,32 @@ export function VerifyForm({
             id="verification-code"
             value={code}
             onChange={(e) => {
-              setCode(e.target.value);
+              setCode(e.target.value.toUpperCase());
               if (error) setError(null);
             }}
-            placeholder="e.g. WMA-72K91"
+            placeholder="WMA-72K91"
             autoComplete="off"
+            autoCapitalize="characters"
             spellCheck={false}
-            className="h-12 flex-1 font-mono text-base tracking-wide uppercase"
+            inputMode="text"
+            className="h-14 flex-1 bg-white font-mono text-lg tracking-wide"
             disabled={busy}
             aria-invalid={!!error}
           />
-          <Button type="submit" size="lg" className="h-12 shrink-0 px-6" disabled={busy}>
+          <Button type="submit" size="lg" className="h-14 shrink-0 px-6" disabled={busy}>
             {busy ? (
               <>
                 <Loader2 className="animate-spin" />
                 Checking…
               </>
             ) : (
-              <>
-                <Search />
-                Verify
-              </>
+              "Verify Payment"
             )}
           </Button>
         </div>
         {preview && !busy && (
           <p className="text-xs text-muted-foreground">
-            Looking up: <span className="font-mono text-foreground">{preview}</span>
+            Code: <span className="font-mono text-foreground">{preview}</span>
           </p>
         )}
         {busy && (
@@ -111,11 +109,9 @@ export function VerifyForm({
       </form>
 
       {!compact && (
-        <div className="rounded-lg border border-dashed border-border bg-secondary/40 px-3 py-3">
-          <p className="mb-2 text-xs font-medium text-muted-foreground">
-            Demo transactions — tap to try
-          </p>
-          <div className="flex flex-wrap gap-2">
+        <div>
+          <p className="text-xs text-muted-foreground">Examples</p>
+          <div className="mt-2 flex flex-wrap gap-2">
             {demos.map((demo) => (
               <button
                 key={demo.code}
@@ -125,19 +121,19 @@ export function VerifyForm({
                   setCode(demo.code);
                   submit(demo.code);
                 }}
-                className="rounded-md border border-border bg-white px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground disabled:opacity-50"
+                className="rounded-md border border-border bg-white px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground disabled:opacity-50"
               >
                 {demo.label}
-                <span className="ml-1.5 font-mono text-[10px] opacity-70">{demo.code}</span>
               </button>
             ))}
           </div>
         </div>
       )}
 
-      <p className="text-xs text-muted-foreground">
-        V1 verifies Wema-to-Wema transfers only. A verification code is not an OTP
-        and never asks for your PIN or password.
+      <p className="text-xs leading-relaxed text-muted-foreground">
+        V1 currently supports Wema-to-Wema transactions. This code confirms a
+        payment. It is not an OTP, and you should never enter a PIN or password
+        here.
       </p>
     </div>
   );

@@ -9,15 +9,15 @@ import { Button } from "@/components/ui/button";
 const nav = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#why-it-matters", label: "Why it matters" },
-  { href: "/receipt", label: "Sample receipt" },
-  { href: "/whatsapp", label: "WhatsApp (future)" },
+  { href: "/receipt", label: "Receipt" },
+  { href: "/channels", label: "Channels" },
 ];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-[#faf9f8]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
           <BrandLockup size="sm" />
