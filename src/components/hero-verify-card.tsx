@@ -7,7 +7,7 @@ export function HeroVerifyCard() {
     <div className="relative mx-auto w-full max-w-md animate-fade-up [animation-delay:120ms]">
       <div
         aria-hidden
-        className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,#f8e8eb_0%,transparent_55%),radial-gradient(circle_at_80%_80%,#e8f5ee_0%,transparent_50%)]"
+        className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_30%_20%,#f3ebf8_0%,transparent_55%),radial-gradient(circle_at_80%_80%,#e8f5ee_0%,transparent_50%)]"
       />
       <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-[0_20px_50px_-28px_rgba(26,26,26,0.45)]">
         <div className="flex items-center justify-between border-b border-border px-5 py-4">

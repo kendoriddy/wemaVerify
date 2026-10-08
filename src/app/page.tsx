@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-border">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#faf9f8_0%,#f7f0f2_45%,#faf9f8_100%)]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#faf9f8_0%,#f4eef8_45%,#faf9f8_100%)]"
         />
         <div
           aria-hidden
@@ -262,7 +262,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[linear-gradient(135deg,#9e0e26_0%,#c41230_55%,#a51228_100%)] text-white">
+      <section className="bg-[linear-gradient(135deg,#4A154B_0%,#5F259F_100%)] text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-16">
           <div className="max-w-xl">
             <div className="mb-3 flex items-center gap-2">
