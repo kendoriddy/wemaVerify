@@ -18,7 +18,7 @@ export function BrandMark({
       className={cn(dim, className)}
       aria-hidden="true"
     >
-      <rect width="40" height="40" rx="10" fill="#C41230" />
+      <rect width="40" height="40" rx="10" fill="#5F259F" />
       <path
         d="M11 26V14h3.2l3.1 8.4L20.4 14H24v12h-2.4v-7.6L18.2 26h-2.4l-3.4-7.6V26H11Z"
         fill="white"
@@ -28,7 +28,7 @@ export function BrandMark({
         fill="white"
         opacity="0.92"
       />
-      <circle cx="31.5" cy="12.5" r="2.2" fill="#F8E8EB" />
+      <circle cx="31.5" cy="12.5" r="2.2" fill="#F3EBF8" />
     </svg>
   );
 }
@@ -36,9 +36,11 @@ export function BrandMark({
 export function BrandLockup({
   className,
   size = "md",
+  inverted = false,
 }: {
   className?: string;
   size?: "sm" | "md" | "lg";
+  inverted?: boolean;
 }) {
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
@@ -46,14 +48,22 @@ export function BrandLockup({
       <div className="leading-tight">
         <p
           className={cn(
-            "font-semibold tracking-tight text-charcoal",
+            "font-semibold tracking-tight",
+            inverted ? "text-white" : "text-charcoal",
             size === "lg" ? "text-xl" : size === "sm" ? "text-sm" : "text-base",
           )}
         >
           Wema Verify
         </p>
         {size !== "sm" && (
-          <p className="text-[11px] text-muted-foreground">Hackathon Prototype</p>
+          <p
+            className={cn(
+              "text-[11px]",
+              inverted ? "text-white/70" : "text-muted-foreground",
+            )}
+          >
+            Hackathon Prototype
+          </p>
         )}
       </div>
     </div>

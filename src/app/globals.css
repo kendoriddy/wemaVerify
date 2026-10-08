@@ -43,7 +43,8 @@
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
-  --color-wema-red: var(--wema-red);
+  --color-wema-purple: var(--wema-purple);
+  --color-wema-purple-deep: var(--wema-purple-deep);
   --color-charcoal: var(--charcoal);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -55,9 +56,9 @@
 }
 
 :root {
-  /* Wema-inspired bank red + charcoal neutrals */
-  --wema-red: #c41230;
-  --wema-red-dark: #9e0e26;
+  /* Official Wema Bank brand purple + charcoal neutrals */
+  --wema-purple: #5f259f;
+  --wema-purple-deep: #4a154b;
   --charcoal: #1a1a1a;
   --background: #faf9f8;
   --foreground: #1a1a1a;
@@ -65,23 +66,23 @@
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --primary: #c41230;
+  --primary: #5f259f;
   --primary-foreground: #ffffff;
   --secondary: #f3f1ef;
   --secondary-foreground: #1a1a1a;
   --muted: #f3f1ef;
   --muted-foreground: #5c5c5c;
-  --accent: #f8e8eb;
-  --accent-foreground: #9e0e26;
-  --destructive: #c41230;
+  --accent: #f3ebf8;
+  --accent-foreground: #5f259f;
+  --destructive: #c41230; /* semantic danger — not brand */
   --border: #e5e2de;
   --input: #e5e2de;
-  --ring: #c41230;
+  --ring: #5f259f;
   --success: #1b7a4e;
   --success-foreground: #ffffff;
   --warning: #b7791f;
   --warning-foreground: #ffffff;
-  --chart-1: #c41230;
+  --chart-1: #5f259f;
   --chart-2: #1b7a4e;
   --chart-3: #b7791f;
   --chart-4: #5c5c5c;
@@ -89,12 +90,12 @@
   --radius: 0.625rem;
   --sidebar: #ffffff;
   --sidebar-foreground: #1a1a1a;
-  --sidebar-primary: #c41230;
+  --sidebar-primary: #5f259f;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3f1ef;
   --sidebar-accent-foreground: #1a1a1a;
   --sidebar-border: #e5e2de;
-  --sidebar-ring: #c41230;
+  --sidebar-ring: #5f259f;
 }
 
 @layer base {
