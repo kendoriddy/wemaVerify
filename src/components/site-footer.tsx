@@ -7,21 +7,27 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm space-y-3">
           <BrandLockup />
-          <p className="text-sm text-muted-foreground">
-            Wema Verify — Hackathon Prototype for Hackaholics 7.0 by Wema Bank @
-            University of Ibadan. Not a live banking product.
-          </p>
+          <p className="text-sm text-muted-foreground">Wema Verify.</p>
         </div>
         <div className="grid grid-cols-2 gap-8 text-sm">
           <div className="space-y-2">
             <p className="font-medium text-foreground">Product</p>
-            <Link href="/verify" className="block text-muted-foreground hover:text-foreground">
+            <Link
+              href="/verify"
+              className="block text-muted-foreground hover:text-foreground"
+            >
               Verify a Payment
             </Link>
-            <Link href="/receipt" className="block text-muted-foreground hover:text-foreground">
+            <Link
+              href="/receipt"
+              className="block text-muted-foreground hover:text-foreground"
+            >
               Sample receipt
             </Link>
-            <Link href="/whatsapp" className="block text-muted-foreground hover:text-foreground">
+            <Link
+              href="/whatsapp"
+              className="block text-muted-foreground hover:text-foreground"
+            >
               WhatsApp (future)
             </Link>
           </div>
